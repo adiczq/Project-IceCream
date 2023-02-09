@@ -1,0 +1,140 @@
+.backdrop-menu {
+  z-index: 90;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 165, 186, 0.5);
+  width: 100%;
+  height: 100%;
+  transition: $transitionDefault;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.opened {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transition: $transitionDefault;
+}
+
+.menu {
+  z-index: 100;
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  right: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #e17992;
+  transform: translateX(150%);
+  transition: $transitionDefault;
+  filter: drop-shadow(-8px 0px 20px rgba(0, 0, 0, 0.25));
+
+  &__toggle {
+    background: transparent;
+    border: none;
+    transition: $transitionDefault;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.25);
+    }
+  }
+
+  &.is-open {
+    transform: translateX(0);
+    opacity: 1;
+    display: block;
+    transition: $transitionDefault;
+    pointer-events: all;
+  }
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+.menu .toggle__close {
+  position: absolute;
+  top: 14px;
+  right: 28px;
+}
+
+.toggle-buy-now__mobile-menu {
+  margin: 60px 32px 0px;
+  padding: 10px 48px;
+  display: block;
+}
+
+.icon-close-button {
+  fill: rgba(255, 255, 255, 1);
+  display: inline-block;
+}
+
+.icon-more-btn {
+  stroke: #d41443;
+  fill: none;
+  margin-left: 15.77px;
+}
+
+.borders__mobile--menu {
+  width: 250px;
+  height: 42px;
+  border-top: 1px solid #e18298;
+  border-bottom: 1px solid #e18298;
+  padding: 0;
+}
+
+.mobile__menu {
+  margin-top: 19px;
+  padding: 0%;
+}
+
+.mobile__menu-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile__menu--link {
+  font-family: $paragraphFont;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.29;
+  color: $whiteColor;
+  padding-top: 13px;
+  padding-bottom: 11px;
+}
+
+.padding-link {
+  padding-left: 21px;
+}
+
+.mobile__menu--link:hover,
+.mobile__menu--link:focus {
+  color: $primaryColorRed;
+}
+
+@media (min-width: $breakpointTabletStart) {
+  .menu {
+    width: 254px;
+  }
+
+  .menu .toggle__close {
+    right: 34px;
+  }
+
+  .toggle-buy-now__mobile-menu {
+    margin: 60px 34px 0px;
+  }
+}
+
+@media (min-width: $breakpointDesktopStart) {
+  .menu__toggle {
+    display: none;
+  }
+}

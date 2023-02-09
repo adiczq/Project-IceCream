@@ -1,0 +1,99 @@
+.wide-btn {
+  border-radius: $buttonBorderRadius;
+  font-family: $paragraphFont;
+  transition: $transitionDefault;
+  border: none;
+  @include flexcenter;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    box-shadow: $shadowDefault;
+    transform: translate(-1px, -1px);
+  }
+
+  &--red {
+    background-color: $primaryColorRed;
+    color: $whiteColor;
+
+    a {
+      color: $whiteColor;
+    }
+
+    &:hover,
+    &:focus {
+      color: $primaryColorRed;
+      background-color: $whiteColor;
+
+      a {
+        color: $primaryColorRed;
+      }
+
+      & .icon-vector {
+        stroke: $primaryColorRed;
+      }
+    }
+  }
+
+  &--white {
+    background-color: $whiteColor;
+    color: $primaryColorRed;
+
+    a {
+      color: $primaryColorRed;
+    }
+
+    &:hover,
+    &:focus {
+      color: $whiteColor;
+      background-color: $primaryColorRed;
+
+      a {
+        color: $whiteColor;
+      }
+
+      & .icon-vector {
+        stroke: $whiteColor;
+      }
+    }
+  }
+
+  &--gray {
+    background-color: $whiteColor;
+    color: $primaryColorRed;
+
+    a {
+      color: $primaryColorRed;
+    }
+
+    &:hover,
+    &:focus {
+      color: $primaryColorRed;
+      background-color: $buttonHoverColorGray;
+
+      a {
+        color: $whiteColor;
+      }
+
+      & .icon-vector {
+        stroke: $whiteColor;
+      }
+    }
+  }
+}
+
+%round-btn {
+  border: none;
+  content: '';
+  background: url('../images/arrow-right.png');
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: $transitionDefault;
+
+  &:hover,
+  &:focus {
+    box-shadow: $shadowDefault;
+    transform: scale(1.1);
+  }
+}
